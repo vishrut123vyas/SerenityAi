@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SerenityAI - Your Mental Wellness Companion. Assess, heal, and connect with personalized mental health support.">
+    <meta name="keywords" content="mental health, therapy, wellness, meditation, emotional support">
+    <title>SerenityAI - Mental Health Companion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Floating Particles -->
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <i class="fas fa-heart"></i>
+                    <span>SerenityAI</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="active">Home</a>
+                <a href="assessment.html">Assessment</a>
+                <a href="healing.html">Healing</a>
+                <a href="chat.html">Chat</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Your Mental Wellness Companion</h1>
+                <p class="hero-subtitle">Assess. Heal. Connect. Experience personalized mental health support</p>
+                <div class="hero-buttons">
+                    <a href="assessment.html" class="btn btn-primary">
+                        Get Started
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        <i class="fas fa-play"></i>
+                        Learn More
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">10K+</span>
+                        <span class="hero-stat-label">Users Helped</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">50K+</span>
+                        <span class="hero-stat-label">Sessions</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">99%</span>
+                        <span class="hero-stat-label">Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Core Features</h2>
+                <p>Discover the powerful tools designed to support your mental wellness journey</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in-on-scroll">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #ef4444, #f87171);">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Emotional State Assessment</h3>
+                    <p>Take a comprehensive questionnaire to assess your emotional well-being with levels 1-4, helping us understand your current mental state.</p>
+                    <ul>
+                        <li>Personalized questionnaire</li>
+                        <li>Real-time emotional analysis</li>
+                        <li>Progress tracking over time</li>
+                        <li>Confidential and secure</li>
+                    </ul>
+                </div>
+                <div class="feature-card fade-in-on-scroll">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Personalized Healing</h3>
+                    <p>Experience personalized healing through sound frequencies and screen light therapy tailored to your emotional needs.</p>
+                    <ul>
+                        <li>Custom sound frequencies</li>
+                        <li>Adaptive light therapy</li>
+                        <li>Personalized recommendations</li>
+                        <li>Scientifically backed methods</li>
+                    </ul>
+                </div>
+                <div class="feature-card fade-in-on-scroll">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Anonymous Chat with Psychologist</h3>
+                    <p>Connect with licensed psychologists anonymously for professional guidance and emotional support when you need it most.</p>
+                    <ul>
+                        <li>100% anonymous conversations</li>
+                        <li>Licensed professionals</li>
+                        <li>24/7 availability</li>
+                        <li>Secure messaging platform</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Features Section -->
+    <section class="additional-features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Additional Features</h2>
+                <p>Comprehensive tools to support every aspect of your mental wellness journey</p>
+            </div>
+            <div class="features-grid small">
+                <div class="feature-card small">
+                    <div class="feature-icon small" style="background: linear-gradient(135deg, #10b981, #34d399);">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Digital Assistant</h3>
+                    <p>Get instant self-care tips and meditation guidance from our intelligent assistant.</p>
+                </div>
+                <div class="feature-card small">
+                    <div class="feature-icon small" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Mood Tracker</h3>
+                    <p>Monitor your emotional patterns with our intuitive dashboard and progress insights.</p>
+                </div>
+                <div class="feature-card small">
+                    <div class="feature-icon small" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3>Guided Meditations</h3>
+                    <p>Access a library of calming meditation sessions and breathing exercises.</p>
+                </div>
+                <div class="feature-card small">
+                    <div class="feature-icon small" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Breathing Exercises</h3>
+                    <p>Learn effective breathing techniques to manage stress and anxiety in real-time.</p>
+                </div>
+                <div class="feature-card small">
+                    <div class="feature-icon small" style="background: linear-gradient(135deg, #ef4444, #f87171);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Emergency Support</h3>
+                    <p>Quick access to helpline numbers and crisis resources when you need immediate help.</p>
+                </div>
+                <div class="feature-card small">
+                    <div class="feature-icon small" style="background: linear-gradient(135deg, #6366f1, #818cf8);">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Progress Analytics</h3>
+                    <p>Track your mental wellness journey with detailed analytics and insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>A simple four-step process to transform your mental wellness journey</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-icon" style="background: linear-gradient(135deg, #ef4444, #f87171);">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3>Assess</h3>
+                        <p>Complete our comprehensive emotional assessment questionnaire to understand your current mental state.</p>
+                        <small>Advanced emotional analysis with personalized insights</small>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-icon" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Heal</h3>
+                        <p>Receive personalized healing recommendations including sound frequencies and light therapy.</p>
+                        <small>Adaptive algorithms with biofeedback integration</small>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-icon" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Chat</h3>
+                        <p>Connect anonymously with licensed psychologists for professional guidance and support.</p>
+                        <small>Secure messaging with end-to-end encryption</small>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-icon" style="background: linear-gradient(135deg, #10b981, #34d399);">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Track Progress</h3>
+                        <p>Monitor your mental wellness journey with detailed analytics and progress insights.</p>
+                        <small>Real-time data visualization and trend analysis</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prototype Preview Section -->
+    <section class="prototype-preview" id="prototype">
+        <div class="container">
+            <div class="section-header">
+                <h2>Prototype Preview</h2>
+                <p>Explore the intuitive interface designed for your mental wellness journey</p>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-content">
+                        <div class="mockup-container">
+                            <div class="mockup-frame">
+                                <div class="mockup-screen" id="mockup-screen">
+                                    <div class="mockup-icon">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <h3 class="mockup-title">Welcome Screen</h3>
+                                    <p class="mockup-desc">SerenityAI</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-container">
+                            <h3 id="screen-title">Welcome Screen</h3>
+                            <p id="screen-description">A warm, calming introduction that sets the tone for your mental wellness journey.</p>
+                            <ul id="screen-features">
+                                <li>Personalized greeting</li>
+                                <li>Quick mood check-in</li>
+                                <li>Daily wellness tips</li>
+                                <li>Progress overview</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-btn" onclick="prevSlide()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="nav-btn" onclick="nextSlide()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="dots-container" id="dots-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="roadmap" id="roadmap">
+        <div class="container">
+            <div class="section-header">
+                <h2>Development Roadmap</h2>
+                <p>Our journey from concept to launch, ensuring quality and user satisfaction</p>
+            </div>
+            <div class="roadmap-container">
+                <div class="roadmap-line"></div>
+                <div class="phases-grid">
+                    <div class="phase-card">
+                        <div class="phase-number">1</div>
+                        <div class="phase-icon" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Research & Planning</h3>
+                        <p>Comprehensive market research, user interviews, and technical feasibility studies.</p>
+                        <ul>
+                            <li>User research and interviews</li>
+                            <li>Market analysis</li>
+                            <li>Technical architecture planning</li>
+                            <li>Regulatory compliance review</li>
+                        </ul>
+                        <div class="phase-status completed">Completed</div>
+                    </div>
+                    <div class="phase-card">
+                        <div class="phase-number">2</div>
+                        <div class="phase-icon" style="background: linear-gradient(135deg, #10b981, #34d399);">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>MVP Development</h3>
+                        <p>Building the core features including assessment, basic healing tools, and chat interface.</p>
+                        <ul>
+                            <li>Core assessment system</li>
+                            <li>Basic healing features</li>
+                            <li>Chat interface prototype</li>
+                            <li>User authentication</li>
+                        </ul>
+                        <div class="phase-status in-progress">In Progress</div>
+                    </div>
+                    <div class="phase-card">
+                        <div class="phase-number">3</div>
+                        <div class="phase-icon" style="background: linear-gradient(135deg, #3b82f6, #60a5fa);">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Testing & Iteration</h3>
+                        <p>Beta testing with real users, feedback collection, and feature refinement.</p>
+                        <ul>
+                            <li>Beta user testing</li>
+                            <li>Performance optimization</li>
+                            <li>Security audits</li>
+                            <li>Feature refinement</li>
+                        </ul>
+                        <div class="phase-status upcoming">Upcoming</div>
+                    </div>
+                    <div class="phase-card">
+                        <div class="phase-number">4</div>
+                        <div class="phase-icon" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Launch & Scale</h3>
+                        <p>Public launch with full feature set and continuous improvement based on user feedback.</p>
+                        <ul>
+                            <li>Public app launch</li>
+                            <li>Marketing campaigns</li>
+                            <li>User support system</li>
+                            <li>Continuous updates</li>
+                        </ul>
+                        <div class="phase-status upcoming">Upcoming</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Team</h2>
+                                        <p>Our dedicated team of licensed professionals and mental health specialists committed to your wellness</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar" style="background: linear-gradient(135deg, #ef4444, #f87171);">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Dr. Sarah Chen</h3>
+                    <p class="role">Lead Clinical Psychologist</p>
+                    <p class="bio">Specializing in cognitive behavioral therapy and trauma-informed care with over 15 years of experience in digital mental health platforms.</p>
+                    <div class="credentials">
+                        <span>Ph.D. Clinical Psychology</span>
+                        <span>Licensed Psychologist</span>
+                        <span>CBT Certified</span>
+                    </div>
+                    <p class="specialization"><strong>Specialization:</strong> Anxiety, Depression, Trauma Recovery</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Dr. Marcus Rodriguez</h3>
+                    <p class="role">Technology Ethics Specialist</p>
+                    <p class="bio">Expert in responsible technology development and mental health platforms, ensuring our systems prioritize user safety and ethical standards.</p>
+                    <div class="credentials">
+                        <span>Ph.D. Technology Ethics</span>
+                        <span>Mental Health Tech</span>
+                        <span>Privacy Expert</span>
+                    </div>
+                    <p class="specialization"><strong>Specialization:</strong> Technology Ethics, Privacy, Safety Protocols</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Dr. Emily Watson</h3>
+                    <p class="role">Digital Wellness Director</p>
+                    <p class="bio">Pioneer in digital mental health interventions, focusing on evidence-based approaches and user-centered design principles.</p>
+                    <div class="credentials">
+                        <span>Ph.D. Digital Health</span>
+                        <span>Research Director</span>
+                        <span>Wellness Expert</span>
+                    </div>
+                    <p class="specialization"><strong>Specialization:</strong> Digital Interventions, Research, User Experience</p>
+                </div>
+            </div>
+            <div class="anonymity-note">
+                <div class="anonymity-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <p><strong>Privacy & Anonymity:</strong> All conversations are completely anonymous and protected by end-to-end encryption. Your identity and personal information remain confidential at all times.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Users Say</h2>
+                <p>Real feedback from our beta users about their experience with SerenityAI</p>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-card" id="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" id="testimonial-text">SerenityAI has been a game-changer for my mental health. The assessment was so intuitive and the personalized healing sessions have helped me manage my anxiety in ways I never thought possible.</p>
+                    <div class="testimonial-author">
+                        <h4 id="author-name">Alex M.</h4>
+                        <p id="author-role">Beta User</p>
+                    </div>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="nav-btn" onclick="prevTestimonial()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="nav-btn" onclick="nextTestimonial()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="dots-container" id="testimonial-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Mental Wellness?</h2>
+                <p>Join thousands of users who are already on their journey to better mental health. Sign up for early access and be the first to experience the future of digital wellness.</p>
+                
+                <div class="form-container">
+                    <h3>Get Early Access</h3>
+                    <p>Enter your email to join our waitlist and receive exclusive updates about SerenityAI's launch.</p>
+                    
+                    <form class="signup-form" id="signup-form">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            Get Early Access
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                    
+                    <div class="success-message" id="success-message" style="display: none;">
+                        <i class="fas fa-envelope"></i>
+                        Thank you! You've been added to our waitlist. We'll notify you when SerenityAI launches.
+                    </div>
+                </div>
+
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h4>Early Access</h4>
+                        <p>Be among the first to experience SerenityAI when we launch</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Exclusive Updates</h4>
+                        <p>Get insider information about new features and developments</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <h4>Priority Support</h4>
+                        <p>Receive priority customer support and personalized assistance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SerenityAI</h3>
+                    <p>Your mental wellness companion. We're committed to making mental health support accessible, personalized, and effective through cutting-edge technology.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>vishrutvyas123@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>Vishrut Vyas: +91 7415836560</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>Aaradhya Vyas: +91 9424811907</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Indore, MP, India</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html#features">Features</a>
+                        <a href="index.html#how-it-works">How It Works</a>
+                        <a href="about.html#team">Our Team</a>
+                        <a href="index.html#roadmap">Roadmap</a>
+                        <a href="index.html#testimonials">Testimonials</a>
+                        <a href="about.html#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <div class="footer-links">
+                        <a href="#help">Help Center</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="#community">Community</a>
+                        <a href="#feedback">Feedback</a>
+                        <a href="#emergency">Emergency Resources</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <h4>Important Medical Disclaimer</h4>
+                <p>SerenityAI is designed to support mental wellness and provide educational content. It is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of qualified healthcare providers for any health concerns. If you are experiencing a mental health emergency, please contact emergency services immediately.</p>
+            </div>
+            
+            <div class="bottom-footer">
+                <p>&copy; 2024 SerenityAI. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#cookies">Cookie Policy</a>
+                    <a href="#accessibility">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

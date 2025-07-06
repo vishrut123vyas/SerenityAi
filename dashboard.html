@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your SerenityAI Dashboard - Track your mental wellness journey with detailed analytics and insights">
+    <title>Dashboard - SerenityAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <i class="fas fa-heart"></i>
+                    <span>SerenityAI</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="assessment.html">Assessment</a>
+                <a href="healing.html">Healing</a>
+                <a href="chat.html">Chat</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <section class="dashboard-header">
+        <div class="container">
+            <div class="dashboard-intro">
+                <h1>Your Wellness Dashboard</h1>
+                <p>Track your mental wellness journey with personalized insights and progress analytics.</p>
+                <div class="user-stats">
+                    <div class="stat">
+                        <i class="fas fa-calendar"></i>
+                        <span>Member since: <strong>January 2024</strong></span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Current Streak: <strong>7 days</strong></span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-trophy"></i>
+                        <span>Wellness Score: <strong>85/100</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+        <div class="container">
+            <div class="actions-grid">
+                <button class="action-card" onclick="location.href='assessment.html'">
+                    <div class="action-icon" style="background: linear-gradient(135deg, #ef4444, #f87171);">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Take Assessment</h3>
+                    <p>Update your emotional state</p>
+                </button>
+                <button class="action-card" onclick="location.href='healing.html'">
+                    <div class="action-icon" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Start Healing</h3>
+                    <p>Begin a therapy session</p>
+                </button>
+                <button class="action-card" onclick="location.href='chat.html'">
+                    <div class="action-icon" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Chat Support</h3>
+                    <p>Connect with professionals</p>
+                </button>
+                <button class="action-card" onclick="logMood()">
+                    <div class="action-icon" style="background: linear-gradient(135deg, #10b981, #34d399);">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>Log Mood</h3>
+                    <p>Record how you're feeling</p>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Content -->
+    <section class="dashboard-content">
+        <div class="container">
+            <div class="dashboard-grid">
+                <!-- Mood Tracking -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>Mood Tracking</h3>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary" onclick="viewMoodHistory()">
+                                <i class="fas fa-history"></i>
+                                History
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="mood-chart-container">
+                            <canvas id="moodChart" width="400" height="200"></canvas>
+                        </div>
+                        <div class="mood-summary">
+                            <div class="mood-stat">
+                                <span class="label">Average Mood</span>
+                                <span class="value">7.2/10</span>
+                            </div>
+                            <div class="mood-stat">
+                                <span class="label">This Week</span>
+                                <span class="value">+0.8</span>
+                            </div>
+                            <div class="mood-stat">
+                                <span class="label">Best Day</span>
+                                <span class="value">Wednesday</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Analytics -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>Progress Analytics</h3>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary" onclick="exportData()">
+                                <i class="fas fa-download"></i>
+                                Export
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="progress-metrics">
+                            <div class="metric">
+                                <div class="metric-icon" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="metric-info">
+                                    <h4>Healing Sessions</h4>
+                                    <p>12 sessions completed</p>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-icon" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div class="metric-info">
+                                    <h4>Chat Sessions</h4>
+                                    <p>8 conversations</p>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-icon" style="background: linear-gradient(135deg, #10b981, #34d399);">
+                                    <i class="fas fa-spa"></i>
+                                </div>
+                                <div class="metric-info">
+                                    <h4>Meditation Time</h4>
+                                    <p>2.5 hours total</p>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>Recent Activity</h3>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary" onclick="viewAllActivity()">
+                                <i class="fas fa-list"></i>
+                                View All
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="activity-list" id="activity-list">
+                            <!-- Activity items will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wellness Insights -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>Personalized Insights</h3>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary" onclick="refreshInsights()">
+                                <i class="fas fa-sync"></i>
+                                Refresh
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="insights-container" id="insights-container">
+                            <!-- Personalized insights will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals & Achievements -->
+    <section class="goals-achievements">
+        <div class="container">
+            <div class="goals-grid">
+                <div class="goals-card">
+                    <h3>Current Goals</h3>
+                    <div class="goals-list" id="goals-list">
+                        <!-- Goals will be populated here -->
+                    </div>
+                    <button class="btn btn-primary" onclick="addNewGoal()">
+                        <i class="fas fa-plus"></i>
+                        Add Goal
+                    </button>
+                </div>
+                <div class="achievements-card">
+                    <h3>Achievements</h3>
+                    <div class="achievements-grid" id="achievements-grid">
+                        <!-- Achievements will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SerenityAI</h3>
+                    <p>Your mental wellness companion.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="assessment.html">Assessment</a>
+                        <a href="healing.html">Healing</a>
+                        <a href="chat.html">Chat</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-footer">
+                <p>&copy; 2024 SerenityAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html> 
