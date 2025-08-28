@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experience personalized healing with SerenityAI - Sound therapy, light therapy, and guided meditation sessions">
+    <title>Healing Sessions - SerenityAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <i class="fas fa-heart"></i>
+                    <span>SerenityAI</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="assessment.html">Assessment</a>
+                <a href="healing.html" class="active">Healing</a>
+                <a href="chat.html">Chat</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="about.html">About</a>
+            </div>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark or light mode"><i class="fas fa-moon"></i></button>
+            <div class="nav-toggle" id="nav-toggle" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Healing Header -->
+    <section class="healing-header">
+        <div class="container">
+            <div class="healing-intro">
+                <h1>Advanced Personalized Healing Sessions</h1>
+                <p>Experience the future of mental wellness with AI-powered therapy, biofeedback integration, and immersive healing experiences tailored to your unique needs.</p>
+                <div class="healing-stats">
+                    <div class="stat">
+                        <i class="fas fa-music"></i>
+                        <span>AI Sound Therapy</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Adaptive Light Therapy</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-spa"></i>
+                        <span>VR Meditation</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-brain"></i>
+                        <span>Biofeedback</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Therapy Recommendation -->
+    <section class="ai-recommendation" id="ai-recommendation">
+        <div class="container">
+            <div class="ai-recommendation-card">
+                <div class="ai-header">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI-Powered Therapy Recommendation</h3>
+                </div>
+                <div class="ai-content">
+                    <div class="recommendation-display" id="recommendation-display">
+                        <div class="loading-ai">
+                            <div class="spinner"></div>
+                            <p>Analyzing your assessment data...</p>
+                        </div>
+                    </div>
+                    <div class="ai-actions">
+                        <button class="btn btn-primary" id="generate-recommendation-btn">
+                            <i class="fas fa-magic"></i>
+                            Generate Personalized Session
+                        </button>
+                        <button class="btn btn-secondary" id="refresh-recommendation-btn">
+                            <i class="fas fa-sync-alt"></i>
+                            Refresh Analysis
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Healing Dashboard -->
+    <section class="healing-dashboard">
+        <div class="container">
+            <div class="healing-grid">
+                <!-- Advanced Sound Therapy -->
+                <div class="healing-card">
+                    <div class="healing-header">
+                        <div class="healing-icon" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3>AI Sound Therapy</h3>
+                        <p>Intelligent frequency selection based on your emotional state and brainwave patterns</p>
+                    </div>
+                    <div class="healing-controls">
+                        <div class="frequency-selector">
+                            <label>AI-Recommended Frequency</label>
+                            <select id="frequency-select">
+                                <option value="432">432 Hz - Universal Harmony</option>
+                                <option value="528">528 Hz - Love & Healing</option>
+                                <option value="639">639 Hz - Heart Connection</option>
+                                <option value="741">741 Hz - Intuition</option>
+                                <option value="852">852 Hz - Spiritual Order</option>
+                                <option value="963">963 Hz - Crown Chakra</option>
+                                <option value="174">174 Hz - Pain Relief</option>
+                                <option value="285">285 Hz - Tissue Healing</option>
+                            </select>
+                        </div>
+                        <div class="volume-control">
+                            <label>Volume</label>
+                            <input type="range" id="volume-slider" min="0" max="100" value="50">
+                            <span id="volume-value">50%</span>
+                        </div>
+                        <div class="session-controls">
+                            <button class="btn btn-primary" id="play-sound" aria-label="Start AI sound therapy session">
+                                <i class="fas fa-play"></i>
+                                Start AI Session
+                            </button>
+                            <div class="timer" id="sound-timer">00:00</div>
+                        </div>
+                        <div class="biofeedback-display" id="sound-biofeedback" style="display: none;">
+                            <div class="biofeedback-metric">
+                                <span>Brainwave Sync:</span>
+                                <div class="biofeedback-bar">
+                                    <div class="biofeedback-fill" id="brainwave-sync"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Light Therapy -->
+                <div class="healing-card">
+                    <div class="healing-header">
+                        <div class="healing-icon" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Adaptive Light Therapy</h3>
+                        <p>Dynamic screen lighting that responds to your mood and circadian rhythm</p>
+                    </div>
+                    <div class="healing-controls">
+                        <div class="light-mode-selector">
+                            <label>AI-Selected Light Mode</label>
+                            <select id="light-mode-select">
+                                <option value="calm">Calm Blue</option>
+                                <option value="warm">Warm Orange</option>
+                                <option value="nature">Nature Green</option>
+                                <option value="sunset">Sunset Pink</option>
+                                <option value="ocean">Ocean Teal</option>
+                                <option value="aurora">Aurora Purple</option>
+                                <option value="forest">Forest Deep</option>
+                                <option value="zen">Zen White</option>
+                            </select>
+                        </div>
+                        <div class="intensity-control">
+                            <label>Intensity</label>
+                            <input type="range" id="intensity-slider" min="0" max="100" value="60">
+                            <span id="intensity-value">60%</span>
+                        </div>
+                        <div class="session-controls">
+                            <button class="btn btn-primary" id="start-light" aria-label="Start adaptive light therapy session">
+                                <i class="fas fa-play"></i>
+                                Start Therapy
+                            </button>
+                            <div class="timer" id="light-timer">00:00</div>
+                        </div>
+                        <div class="light-visualization" id="light-visualization">
+                            <canvas id="light-canvas" width="200" height="100"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Virtual Reality Meditation -->
+                <div class="healing-card">
+                    <div class="healing-header">
+                        <div class="healing-icon" style="background: linear-gradient(135deg, #10b981, #34d399);">
+                            <i class="fas fa-vr-cardboard"></i>
+                        </div>
+                        <h3>VR Meditation Experience</h3>
+                        <p>Immersive virtual environments for deep meditation and stress relief</p>
+                    </div>
+                    <div class="healing-controls">
+                        <div class="vr-environment-selector">
+                            <label>Virtual Environment</label>
+                            <select id="vr-environment-select">
+                                <option value="forest">Peaceful Forest</option>
+                                <option value="ocean">Calming Ocean</option>
+                                <option value="mountains">Mountain Peak</option>
+                                <option value="garden">Zen Garden</option>
+                                <option value="space">Cosmic Space</option>
+                                <option value="waterfall">Waterfall Retreat</option>
+                            </select>
+                        </div>
+                        <div class="meditation-type-selector">
+                            <label>Meditation Type</label>
+                            <select id="meditation-select">
+                                <option value="breathing">Breathing Focus</option>
+                                <option value="mindfulness">Mindfulness</option>
+                                <option value="loving-kindness">Loving Kindness</option>
+                                <option value="body-scan">Body Scan</option>
+                                <option value="sleep">Sleep Preparation</option>
+                                <option value="gratitude">Gratitude Practice</option>
+                                <option value="compassion">Self-Compassion</option>
+                            </select>
+                        </div>
+                        <div class="duration-selector">
+                            <label>Duration</label>
+                            <select id="duration-select">
+                                <option value="5">5 minutes</option>
+                                <option value="10">10 minutes</option>
+                                <option value="15">15 minutes</option>
+                                <option value="20">20 minutes</option>
+                                <option value="30">30 minutes</option>
+                                <option value="45">45 minutes</option>
+                            </select>
+                        </div>
+                        <div class="session-controls">
+                            <button class="btn btn-primary" id="start-vr-meditation" aria-label="Start VR meditation session">
+                                <i class="fas fa-play"></i>
+                                Enter VR World
+                            </button>
+                            <div class="timer" id="vr-timer">00:00</div>
+                        </div>
+                        <div class="vr-preview" id="vr-preview">
+                            <div class="vr-scene-preview">
+                                <i class="fas fa-eye"></i>
+                                <span>Preview Scene</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Biofeedback Integration -->
+                <div class="healing-card">
+                    <div class="healing-header">
+                        <div class="healing-icon" style="background: linear-gradient(135deg, #ef4444, #f87171);">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3>Biofeedback Monitoring</h3>
+                        <p>Real-time physiological monitoring to optimize your healing sessions</p>
+                    </div>
+                    <div class="healing-controls">
+                        <div class="biofeedback-status">
+                            <button class="btn btn-secondary" id="enable-biofeedback-btn">
+                                <i class="fas fa-plug"></i>
+                                Enable Biofeedback
+                            </button>
+                            <div class="status-indicator" id="biofeedback-status">Not Connected</div>
+                        </div>
+                        <div class="biofeedback-metrics" id="biofeedback-metrics" style="display: none;">
+                            <div class="metric-row">
+                                <div class="metric">
+                                    <span>Heart Rate:</span>
+                                    <span id="heart-rate">-- BPM</span>
+                                </div>
+                                <div class="metric">
+                                    <span>Breathing Rate:</span>
+                                    <span id="breathing-rate">-- BPM</span>
+                                </div>
+                            </div>
+                            <div class="metric-row">
+                                <div class="metric">
+                                    <span>Stress Level:</span>
+                                    <div class="stress-bar">
+                                        <div class="stress-fill" id="stress-fill"></div>
+                                    </div>
+                                </div>
+                                <div class="metric">
+                                    <span>Relaxation Score:</span>
+                                    <span id="relaxation-score">--%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="biofeedback-chart">
+                            <canvas id="biofeedback-chart" width="300" height="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Active Session Display -->
+    <section class="active-session" id="active-session" style="display: none;">
+        <div class="container">
+            <div class="session-display">
+                <div class="session-info">
+                    <h2 id="session-title">Active Session</h2>
+                    <p id="session-description">Your personalized healing session is in progress</p>
+                    <div class="session-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="session-progress-fill"></div>
+                        </div>
+                        <span id="session-progress-text">0% Complete</span>
+                    </div>
+                </div>
+                <div class="session-visualization">
+                    <div class="visualization-container" id="visualization">
+                        <!-- Dynamic visualization will be rendered here -->
+                    </div>
+                    <div class="session-metrics" id="session-metrics">
+                        <div class="metric-card">
+                            <i class="fas fa-clock"></i>
+                            <span id="session-time">00:00</span>
+                            <small>Duration</small>
+                        </div>
+                        <div class="metric-card">
+                            <i class="fas fa-heart"></i>
+                            <span id="session-heart-rate">--</span>
+                            <small>Heart Rate</small>
+                        </div>
+                        <div class="metric-card">
+                            <i class="fas fa-brain"></i>
+                            <span id="session-stress">--</span>
+                            <small>Stress Level</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="session-controls">
+                    <button class="btn btn-secondary" id="pause-session-btn" aria-label="Pause session">
+                        <i class="fas fa-pause"></i>
+                        Pause
+                    </button>
+                    <button class="btn btn-primary" id="stop-session-btn" aria-label="End session">
+                        <i class="fas fa-stop"></i>
+                        End Session
+                    </button>
+                    <button class="btn btn-secondary" id="adjust-session-btn" aria-label="Adjust session">
+                        <i class="fas fa-sliders-h"></i>
+                        Adjust
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Session Analytics -->
+    <section class="session-analytics">
+        <div class="container">
+            <h2>Session Analytics & Insights</h2>
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <h3>Effectiveness Trends</h3>
+                    <canvas id="effectiveness-chart" width="400" height="200"></canvas>
+                    <div class="analytics-insights">
+                        <p id="effectiveness-insight">Your meditation sessions show a 23% improvement in stress reduction over the past week.</p>
+                    </div>
+                </div>
+                <div class="analytics-card">
+                    <h3>Optimal Session Times</h3>
+                    <div class="optimal-times" id="optimal-times">
+                        <div class="time-slot">
+                            <span class="time">6:00 AM</span>
+                            <span class="effectiveness">High</span>
+                        </div>
+                        <div class="time-slot">
+                            <span class="time">2:00 PM</span>
+                            <span class="effectiveness">Medium</span>
+                        </div>
+                        <div class="time-slot">
+                            <span class="time">8:00 PM</span>
+                            <span class="effectiveness">High</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="analytics-card">
+                    <h3>Personalized Recommendations</h3>
+                    <div class="recommendations-list" id="recommendations-list">
+                        <div class="recommendation-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Try morning sessions for better focus</span>
+                        </div>
+                        <div class="recommendation-item">
+                            <i class="fas fa-music"></i>
+                            <span>432 Hz frequency works best for you</span>
+                        </div>
+                        <div class="recommendation-item">
+                            <i class="fas fa-clock"></i>
+                            <span>15-minute sessions are most effective</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Session History -->
+    <section class="session-history">
+        <div class="container">
+            <h2>Recent Sessions</h2>
+            <div class="history-grid" id="session-history">
+                <!-- Session history will be populated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SerenityAI</h3>
+                    <p>Your mental wellness companion.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="assessment.html">Assessment</a>
+                        <a href="healing.html">Healing</a>
+                        <a href="chat.html">Chat</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-footer">
+                <p>&copy; 2024 SerenityAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+    <script src="healing.js"></script>
+</body>
+</html> 

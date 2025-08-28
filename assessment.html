@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced Emotional Assessment - SerenityAI. Comprehensive mental health evaluation with AI-powered insights.">
+    <meta name="keywords" content="mental health assessment, emotional evaluation, wellness check, AI analysis">
+    <title>Advanced Emotional Assessment - SerenityAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <i class="fas fa-heart"></i>
+                    <span>SerenityAI</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="assessment.html" class="active">Assessment</a>
+                <a href="healing.html">Healing</a>
+                <a href="chat.html">Chat</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="about.html">About</a>
+            </div>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark or light mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="nav-toggle" id="nav-toggle" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Assessment Header -->
+    <section class="assessment-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Advanced Emotional Assessment</h1>
+                    <p>Experience the future of mental health evaluation with AI-powered analysis, real-time mood tracking, and personalized insights.</p>
+                    <div class="assessment-stats">
+                        <div class="stat">
+                            <i class="fas fa-brain"></i>
+                            <span>AI-Powered Analysis</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Real-time Tracking</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>100% Confidential</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-clock"></i>
+                            <span>15-20 Minutes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-visual">
+                    <div class="assessment-preview">
+                        <div class="preview-card">
+                            <div class="preview-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h3>Comprehensive Evaluation</h3>
+                            <p>20 scientifically validated questions covering emotional, cognitive, and behavioral domains</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Container -->
+    <section class="assessment-container">
+        <div class="container">
+            <div class="assessment-layout">
+                <!-- Main Assessment Area -->
+                <div class="assessment-main">
+                    <!-- Progress Section -->
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <h2>Your Assessment Progress</h2>
+                            <div class="progress-info">
+                                <span id="progress-text">Question 1 of 20</span>
+                                <span id="time-elapsed">00:00</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progress-fill"></div>
+                            </div>
+                            <div class="progress-percentage" id="progress-percentage">5%</div>
+                        </div>
+                        <div class="progress-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span id="completed-questions">0</span> Completed
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-clock"></i>
+                                <span id="estimated-time">15 min</span> Remaining
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-save"></i>
+                                <span id="auto-save-status">Auto-saved</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question Section -->
+                    <div class="question-section" id="question-section">
+                        <div class="question-container" id="question-container">
+                            <!-- Questions will be dynamically loaded here -->
+                        </div>
+                        
+                        <!-- Navigation Controls -->
+                        <div class="question-navigation">
+                            <button class="btn btn-secondary" id="prev-btn" aria-label="Previous question">
+                                <i class="fas fa-chevron-left"></i>
+                                Previous
+                            </button>
+                            <div class="navigation-info">
+                                <span id="question-counter">1 of 20</span>
+                            </div>
+                            <button class="btn btn-primary" id="next-btn" aria-label="Next question">
+                                Next
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <button class="btn btn-success" id="submit-btn" style="display: none;" aria-label="Submit assessment">
+                                <i class="fas fa-check"></i>
+                                Submit Assessment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="assessment-sidebar">
+                    <!-- Real-time Mood Tracker -->
+                    <div class="sidebar-card mood-tracker-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-heartbeat"></i> Real-time Mood Analysis</h3>
+                            <div class="card-status">
+                                <span class="status-indicator active"></span>
+                                Active
+                            </div>
+                        </div>
+                        <div class="mood-input-area">
+                            <div class="mood-emoji-selector">
+                                <button class="mood-emoji" data-mood="ecstatic" aria-label="Feeling ecstatic">
+                                    <span>😄</span>
+                                    <small>Ecstatic</small>
+                                </button>
+                                <button class="mood-emoji" data-mood="happy" aria-label="Feeling happy">
+                                    <span>😊</span>
+                                    <small>Happy</small>
+                                </button>
+                                <button class="mood-emoji" data-mood="calm" aria-label="Feeling calm">
+                                    <span>😌</span>
+                                    <small>Calm</small>
+                                </button>
+                                <button class="mood-emoji" data-mood="neutral" aria-label="Feeling neutral">
+                                    <span>😐</span>
+                                    <small>Neutral</small>
+                                </button>
+                                <button class="mood-emoji" data-mood="anxious" aria-label="Feeling anxious">
+                                    <span>😰</span>
+                                    <small>Anxious</small>
+                                </button>
+                                <button class="mood-emoji" data-mood="sad" aria-label="Feeling sad">
+                                    <span>😢</span>
+                                    <small>Sad</small>
+                                </button>
+                                <button class="mood-emoji" data-mood="angry" aria-label="Feeling angry">
+                                    <span>😠</span>
+                                    <small>Angry</small>
+                                </button>
+                                <button class="mood-emoji" data-mood="overwhelmed" aria-label="Feeling overwhelmed">
+                                    <span>😵</span>
+                                    <small>Overwhelmed</small>
+                                </button>
+                            </div>
+                            <div class="mood-intensity">
+                                <label>Intensity Level: <span id="intensity-value">5</span></label>
+                                <input type="range" id="intensity-slider" min="1" max="10" value="5">
+                            </div>
+                            <div class="mood-notes">
+                                <textarea id="mood-notes" placeholder="How are you feeling right now? (Optional)"></textarea>
+                                <button class="btn btn-secondary" id="save-mood-btn">
+                                    <i class="fas fa-save"></i>
+                                    Save Mood
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Voice Input Option -->
+                    <div class="sidebar-card voice-input-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-microphone"></i> Voice Input</h3>
+                            <div class="card-status">
+                                <span class="status-indicator" id="voice-status-indicator"></span>
+                                <span id="voice-status-text">Ready</span>
+                            </div>
+                        </div>
+                        <div class="voice-controls">
+                            <button type="button" class="btn btn-secondary" id="voice-input-btn" aria-label="Use voice input">
+                                <i class="fas fa-microphone"></i>
+                                Start Voice Input
+                            </button>
+                            <div class="voice-status" id="voice-status">Click to start voice input</div>
+                        </div>
+                    </div>
+
+                    <!-- Biometric Integration -->
+                    <div class="sidebar-card biometric-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-fingerprint"></i> Biometric Analysis</h3>
+                            <div class="card-status">
+                                <span class="status-indicator" id="biometric-status-indicator"></span>
+                                <span id="biometric-status-text">Disabled</span>
+                            </div>
+                        </div>
+                        <div class="biometric-controls">
+                            <button class="btn btn-secondary" id="enable-biometric-btn">
+                                <i class="fas fa-camera"></i>
+                                Enable Biometric Analysis
+                            </button>
+                            <div class="biometric-status" id="biometric-status">Biometric analysis disabled</div>
+                        </div>
+                        <div class="biometric-feedback" id="biometric-feedback" style="display: none;">
+                            <div class="facial-expression-display">
+                                <canvas id="expression-canvas" width="200" height="150"></canvas>
+                                <div class="expression-metrics">
+                                    <div class="metric">
+                                        <span>Stress Level:</span>
+                                        <div class="metric-bar"><div class="metric-fill" id="stress-level"></div></div>
+                                    </div>
+                                    <div class="metric">
+                                        <span>Emotional State:</span>
+                                        <span id="emotional-state">Analyzing...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Assessment Tips -->
+                    <div class="sidebar-card tips-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-lightbulb"></i> Assessment Tips</h3>
+                        </div>
+                        <div class="tips-content">
+                            <div class="tip-item">
+                                <i class="fas fa-check"></i>
+                                <span>Answer honestly - there are no right or wrong answers</span>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-check"></i>
+                                <span>Consider your feelings over the past 2 weeks</span>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-check"></i>
+                                <span>Take your time - accuracy is more important than speed</span>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-check"></i>
+                                <span>Your responses are completely confidential</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Results Modal -->
+    <div class="modal" id="results-modal" style="display:none;">
+        <div class="modal-content results-modal">
+            <div class="modal-header">
+                <h2>Your Advanced Assessment Results</h2>
+                <button class="modal-close" id="close-results-modal" aria-label="Close results modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="result-summary">
+                    <div class="score-section">
+                        <h3>Depression</h3>
+                        <div class="score-bar-bg"><div class="score-bar" id="depression-score"></div></div>
+                        <span id="depression-severity"></span>
+                    </div>
+                    <div class="score-section">
+                        <h3>Anxiety</h3>
+                        <div class="score-bar-bg"><div class="score-bar" id="anxiety-score"></div></div>
+                        <span id="anxiety-severity"></span>
+                    </div>
+                    <div class="score-section">
+                        <h3>Stress</h3>
+                        <div class="score-bar-bg"><div class="score-bar" id="stress-score"></div></div>
+                        <span id="stress-severity"></span>
+                    </div>
+                    <div class="score-section">
+                        <h3>Overall Wellness</h3>
+                        <div class="score-bar-bg"><div class="score-bar" id="wellness-score"></div></div>
+                        <span id="wellness-level"></span>
+                    </div>
+                </div>
+                
+                <!-- AI Insights -->
+                <div class="ai-insights">
+                    <h3><i class="fas fa-robot"></i> AI-Powered Insights</h3>
+                    <div class="insights-grid">
+                        <div class="insight-card">
+                            <h4>Pattern Recognition</h4>
+                            <p id="pattern-insight">Analyzing your responses for patterns...</p>
+                        </div>
+                        <div class="insight-card">
+                            <h4>Risk Assessment</h4>
+                            <p id="risk-insight">Evaluating potential risk factors...</p>
+                        </div>
+                        <div class="insight-card">
+                            <h4>Progress Indicators</h4>
+                            <p id="progress-insight">Comparing with previous assessments...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recommendation-section">
+                    <h3>Personalized Recommendations</h3>
+                    <div id="therapy-recommendation"></div>
+                    <div class="recommendation-actions">
+                        <button class="btn btn-primary" id="schedule-session-btn">
+                            <i class="fas fa-calendar"></i>
+                            Schedule Therapy Session
+                        </button>
+                        <button class="btn btn-secondary" id="download-report-btn">
+                            <i class="fas fa-download"></i>
+                            Download Report
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="close-results-btn">Close</button>
+                <a href="healing.html" class="btn btn-primary">
+                    <i class="fas fa-heart"></i>
+                    Start Healing Session
+                </a>
+                <a href="dashboard.html" class="btn btn-primary">
+                    <i class="fas fa-chart-line"></i>
+                    View Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Healing Session Modal -->
+    <div class="modal" id="healing-modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Personalized Healing Session</h2>
+                <button class="modal-close" id="close-healing-modal" aria-label="Close healing modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="healing-info"></div>
+                <div id="light-animation" style="height: 120px; margin: 1rem 0; border-radius: 16px;"></div>
+                <button class="btn btn-primary" id="start-healing-btn" aria-label="Start healing session">Start Healing</button>
+                <div id="healing-timer" style="margin: 1rem 0; display:none;"></div>
+                <div id="feedback-section" style="display:none;">
+                    <h3>How do you feel after this session?</h3>
+                    <div id="feedback-rating">
+                        <button data-rating="1" aria-label="Rate session as 1">1</button>
+                        <button data-rating="2" aria-label="Rate session as 2">2</button>
+                        <button data-rating="3" aria-label="Rate session as 3">3</button>
+                        <button data-rating="4" aria-label="Rate session as 4">4</button>
+                        <button data-rating="5" aria-label="Rate session as 5">5</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay" style="display: none;">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h3>Processing Your Assessment</h3>
+            <p>Our AI is analyzing your responses and generating personalized insights...</p>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+    <script type="module" src="assessment.js"></script>
+</body>
+</html> 

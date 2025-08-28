@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Wellness Dashboard - SerenityAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <i class="fas fa-heart"></i>
+                    <span>SerenityAI</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="assessment.html">Assessment</a>
+                <a href="healing.html">Healing</a>
+                <a href="chat.html">Chat</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="about.html">About</a>
+            </div>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark or light mode"><i class="fas fa-moon"></i></button>
+            <div class="nav-toggle" id="nav-toggle" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <section class="dashboard-header">
+        <div class="container">
+            <div class="dashboard-intro">
+                <h1>Your Advanced Wellness Dashboard</h1>
+                <p>AI-powered insights, predictive analytics, and comprehensive progress tracking for your mental wellness journey.</p>
+                <div class="dashboard-stats">
+                    <div class="stat">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>7 Days Active</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-chart-line"></i>
+                        <span>23% Improvement</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-target"></i>
+                        <span>85% Goals Met</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-star"></i>
+                        <span>4.8/5 Rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Wellness Score -->
+    <section class="wellness-score-section">
+        <div class="container">
+            <div class="wellness-score-card">
+                <div class="score-header">
+                    <h2><i class="fas fa-robot"></i> AI Wellness Score</h2>
+                    <p>Comprehensive analysis of your mental wellness based on assessments, sessions, and daily patterns</p>
+                </div>
+                <div class="score-display">
+                    <div class="main-score">
+                        <div class="score-circle" id="wellness-score-circle">
+                            <span class="score-number" id="wellness-score-number">78</span>
+                            <span class="score-label">/100</span>
+                        </div>
+                        <div class="score-trend">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+5 points this week</span>
+                        </div>
+                    </div>
+                    <div class="score-breakdown">
+                        <div class="score-factor">
+                            <span>Emotional Stability</span>
+                            <div class="factor-bar">
+                                <div class="factor-fill" style="width: 85%"></div>
+                            </div>
+                            <span>85%</span>
+                        </div>
+                        <div class="score-factor">
+                            <span>Stress Management</span>
+                            <div class="factor-bar">
+                                <div class="factor-fill" style="width: 72%"></div>
+                            </div>
+                            <span>72%</span>
+                        </div>
+                        <div class="score-factor">
+                            <span>Social Connection</span>
+                            <div class="factor-bar">
+                                <div class="factor-fill" style="width: 68%"></div>
+                            </div>
+                            <span>68%</span>
+                        </div>
+                        <div class="score-factor">
+                            <span>Sleep Quality</span>
+                            <div class="factor-bar">
+                                <div class="factor-fill" style="width: 91%"></div>
+                            </div>
+                            <span>91%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Dashboard Content -->
+    <section class="dashboard-content">
+        <div class="container">
+            <div class="dashboard-grid">
+                <!-- Progress Over Time -->
+                <div class="dashboard-card full-width">
+                    <div class="card-header">
+                        <h2>Progress Over Time</h2>
+                        <div class="chart-controls">
+                            <button class="btn btn-secondary active" data-period="week">Week</button>
+                            <button class="btn btn-secondary" data-period="month">Month</button>
+                            <button class="btn btn-secondary" data-period="year">Year</button>
+                        </div>
+                    </div>
+                    <canvas id="progress-chart" height="120"></canvas>
+                    <div class="chart-insights">
+                        <div class="insight-item">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>Your anxiety levels have decreased by 23% over the past month</span>
+                        </div>
+                        <div class="insight-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Most productive sessions occur between 6-8 AM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Insights -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-brain"></i> AI Insights</h3>
+                    </div>
+                    <div class="ai-insights-content">
+                        <div class="insight-card">
+                            <div class="insight-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="insight-content">
+                                <h4>Pattern Recognition</h4>
+                                <p>Your stress peaks on Tuesdays and Wednesdays. Consider scheduling meditation sessions on these days.</p>
+                            </div>
+                        </div>
+                        <div class="insight-card">
+                            <div class="insight-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="insight-content">
+                                <h4>Trend Analysis</h4>
+                                <p>Your mood improves significantly after 15-minute sound therapy sessions. Keep up this practice!</p>
+                            </div>
+                        </div>
+                        <div class="insight-card">
+                            <div class="insight-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <div class="insight-content">
+                                <h4>Goal Progress</h4>
+                                <p>You're 85% toward your monthly wellness goal. 2 more sessions this week will help you exceed it.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Predictive Analytics -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-crystal-ball"></i> Predictive Analytics</h3>
+                    </div>
+                    <div class="predictive-content">
+                        <div class="prediction-item">
+                            <div class="prediction-header">
+                                <span>Next Week Forecast</span>
+                                <div class="prediction-confidence">95%</div>
+                            </div>
+                            <div class="prediction-chart">
+                                <canvas id="prediction-chart" width="200" height="100"></canvas>
+                            </div>
+                            <p>Based on your patterns, expect improved mood and reduced stress levels.</p>
+                        </div>
+                        <div class="prediction-item">
+                            <div class="prediction-header">
+                                <span>Optimal Session Times</span>
+                            </div>
+                            <div class="optimal-times">
+                                <div class="time-slot">
+                                    <span class="time">6:00 AM</span>
+                                    <span class="effectiveness high">High</span>
+                                </div>
+                                <div class="time-slot">
+                                    <span class="time">2:00 PM</span>
+                                    <span class="effectiveness medium">Medium</span>
+                                </div>
+                                <div class="time-slot">
+                                    <span class="time">8:00 PM</span>
+                                    <span class="effectiveness high">High</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Assessments -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>Recent Assessments</h3>
+                        <button class="btn btn-secondary" id="view-all-assessments">View All</button>
+                    </div>
+                    <div id="assessment-history">
+                        <div class="assessment-item">
+                            <div class="assessment-date">Today</div>
+                            <div class="assessment-score">
+                                <span class="score">78</span>
+                                <span class="trend positive">+5</span>
+                            </div>
+                            <div class="assessment-summary">
+                                <span class="category">Anxiety</span>
+                                <span class="severity mild">Mild</span>
+                            </div>
+                        </div>
+                        <div class="assessment-item">
+                            <div class="assessment-date">3 days ago</div>
+                            <div class="assessment-score">
+                                <span class="score">73</span>
+                                <span class="trend positive">+8</span>
+                            </div>
+                            <div class="assessment-summary">
+                                <span class="category">Depression</span>
+                                <span class="severity mild">Mild</span>
+                            </div>
+                        </div>
+                        <div class="assessment-item">
+                            <div class="assessment-date">1 week ago</div>
+                            <div class="assessment-score">
+                                <span class="score">65</span>
+                                <span class="trend neutral">0</span>
+                            </div>
+                            <div class="assessment-summary">
+                                <span class="category">Stress</span>
+                                <span class="severity moderate">Moderate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healing Sessions -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>Healing Sessions</h3>
+                        <button class="btn btn-secondary" id="view-all-sessions">View All</button>
+                    </div>
+                    <div id="therapy-history">
+                        <div class="session-item">
+                            <div class="session-type">
+                                <i class="fas fa-music"></i>
+                                <span>Sound Therapy</span>
+                            </div>
+                            <div class="session-duration">15 min</div>
+                            <div class="session-effectiveness">
+                                <span class="effectiveness-score">92%</span>
+                                <div class="effectiveness-bar">
+                                    <div class="effectiveness-fill" style="width: 92%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="session-item">
+                            <div class="session-type">
+                                <i class="fas fa-vr-cardboard"></i>
+                                <span>VR Meditation</span>
+                            </div>
+                            <div class="session-duration">20 min</div>
+                            <div class="session-effectiveness">
+                                <span class="effectiveness-score">88%</span>
+                                <div class="effectiveness-bar">
+                                    <div class="effectiveness-fill" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="session-item">
+                            <div class="session-type">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Light Therapy</span>
+                            </div>
+                            <div class="session-duration">10 min</div>
+                            <div class="session-effectiveness">
+                                <span class="effectiveness-score">85%</span>
+                                <div class="effectiveness-bar">
+                                    <div class="effectiveness-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wellness Goals -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>Wellness Goals</h3>
+                        <button class="btn btn-primary" id="add-goal-btn">
+                            <i class="fas fa-plus"></i>
+                            Add Goal
+                        </button>
+                    </div>
+                    <div class="goals-container">
+                        <div class="goal-item">
+                            <div class="goal-info">
+                                <h4>Daily Meditation</h4>
+                                <p>Complete 15 minutes of meditation daily</p>
+                            </div>
+                            <div class="goal-progress">
+                                <div class="progress-circle">
+                                    <svg viewBox="0 0 36 36">
+                                        <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                        <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    </svg>
+                                    <span class="progress-text">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goal-item">
+                            <div class="goal-info">
+                                <h4>Stress Reduction</h4>
+                                <p>Reduce stress levels by 30% this month</p>
+                            </div>
+                            <div class="goal-progress">
+                                <div class="progress-circle">
+                                    <svg viewBox="0 0 36 36">
+                                        <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                        <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    </svg>
+                                    <span class="progress-text">67%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goal-item">
+                            <div class="goal-info">
+                                <h4>Sleep Quality</h4>
+                                <p>Improve sleep quality to 8+ hours</p>
+                            </div>
+                            <div class="goal-progress">
+                                <div class="progress-circle">
+                                    <svg viewBox="0 0 36 36">
+                                        <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                        <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    </svg>
+                                    <span class="progress-text">92%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mood Tracking -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>Mood Tracking</h3>
+                        <button class="btn btn-secondary" id="add-mood-btn">
+                            <i class="fas fa-plus"></i>
+                            Log Mood
+                        </button>
+                    </div>
+                    <div class="mood-tracking">
+                        <div class="mood-chart">
+                            <canvas id="mood-chart" width="300" height="150"></canvas>
+                        </div>
+                        <div class="mood-summary">
+                            <div class="mood-stat">
+                                <span class="mood-label">Average Mood</span>
+                                <span class="mood-value positive">7.2/10</span>
+                            </div>
+                            <div class="mood-stat">
+                                <span class="mood-label">Mood Stability</span>
+                                <span class="mood-value">85%</span>
+                            </div>
+                            <div class="mood-stat">
+                                <span class="mood-label">Best Day</span>
+                                <span class="mood-value">Wednesday</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+        <div class="container">
+            <h2>Quick Actions</h2>
+            <div class="actions-grid">
+                <button class="action-card" id="start-assessment-btn">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Take Assessment</span>
+                </button>
+                <button class="action-card" id="start-healing-btn">
+                    <i class="fas fa-heart"></i>
+                    <span>Start Healing</span>
+                </button>
+                <button class="action-card" id="start-chat-btn">
+                    <i class="fas fa-comments"></i>
+                    <span>Chat Support</span>
+                </button>
+                <button class="action-card" id="export-data-btn">
+                    <i class="fas fa-download"></i>
+                    <span>Export Data</span>
+                </button>
+                <button class="action-card" id="schedule-session-btn">
+                    <i class="fas fa-calendar"></i>
+                    <span>Schedule Session</span>
+                </button>
+                <button class="action-card" id="view-insights-btn">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>View Insights</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SerenityAI</h3>
+                    <p>Your mental wellness companion.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="assessment.html">Assessment</a>
+                        <a href="healing.html">Healing</a>
+                        <a href="chat.html">Chat</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-footer">
+                <p>&copy; 2024 SerenityAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html> 
