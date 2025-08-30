@@ -1,4 +1,5 @@
 node_modules
+.cache
 npm-debug.log
 .env
 .DS_Store
@@ -6,5 +7,6 @@ test*
 setup.js
 seedQuestions.js
 resetDatabase.js
+
 
 
