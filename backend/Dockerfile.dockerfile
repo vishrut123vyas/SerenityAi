@@ -8,7 +8,8 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies (do not use cache mounts to node_modules/.cache)
-RUN npm ci --omit=dev
+RUN rm -rf /app/node_modules/.cache && npm ci --omit=dev
+
 
 # Copy the rest of your application code
 COPY . .
@@ -18,3 +19,4 @@ EXPOSE 3000
 
 # Start your app
 CMD [ "npm", "start" ]
+
