@@ -7,9 +7,8 @@ WORKDIR /app
 # Copy only package files first (leverages Docker cache for faster builds)
 COPY package*.json ./
 
-# Install dependencies (do not use cache mounts to node_modules/.cache)
+# Clean .cache directory and install dependencies
 RUN rm -rf /app/node_modules/.cache && npm ci --omit=dev
-
 
 # Copy the rest of your application code
 COPY . .
@@ -19,4 +18,3 @@ EXPOSE 3000
 
 # Start your app
 CMD [ "npm", "start" ]
-
