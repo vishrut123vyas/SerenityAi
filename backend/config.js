@@ -3,10 +3,11 @@ require('dotenv').config();
 const config = {
   // Database
   database: {
-    host: process.env.DB_HOST || 'localhost',
-    name: process.env.DB_NAME || 'serenityai',
-    user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASS || '',
+    host: process.env.DB_HOST || process.env.MYSQLHOST || 'localhost',
+    name: process.env.DB_NAME || process.env.MYSQLDATABASE || 'serenityai',
+    user: process.env.DB_USER || process.env.MYSQLUSER || 'root',
+    password: process.env.DB_PASS || process.env.MYSQLPASSWORD || '',
+    port: process.env.DB_PORT || process.env.MYSQLPORT || 3306,
     dialect: 'mysql',
     logging: process.env.NODE_ENV === 'development',
   },
@@ -48,4 +49,4 @@ const config = {
   },
 };
 
-module.exports = config; 
+module.exports = config;
