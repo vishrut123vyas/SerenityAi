@@ -1,6 +1,9 @@
 // serenityai-website/api.js
 
-const API_URL = window.SERENITY_API_URL || 'http://localhost:5000/api';
+// serenityai-website/api.js
+window.SERENITY_API_URL = 'https://serenityai-production.up.railway.app/api';
+const API_URL = window.SERENITY_API_URL;
+
 
 // --- Token Management ---
 export function saveToken(token) {
@@ -186,4 +189,5 @@ function generateDemoResponse(userMessage, chatType) {
 // --- Utility: Check if logged in ---
 export function isLoggedIn() {
   return !!getToken();
+
 } 
